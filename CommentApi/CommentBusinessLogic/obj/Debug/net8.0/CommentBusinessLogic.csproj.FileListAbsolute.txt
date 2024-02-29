@@ -1,0 +1,15 @@
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\bin\Debug\net8.0\CommentBusinessLogic.deps.json
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\bin\Debug\net8.0\CommentBusinessLogic.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\bin\Debug\net8.0\CommentBusinessLogic.pdb
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\bin\Debug\net8.0\CommentDataAccess.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\bin\Debug\net8.0\CommentDataAccess.pdb
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.csproj.AssemblyReference.cache
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.AssemblyInfoInputs.cache
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.AssemblyInfo.cs
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.csproj.CoreCompileInputs.cache
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.csproj.CopyComplete
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\refint\CommentBusinessLogic.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.pdb
+E:\repos\2023\formation\stage_final\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\ref\CommentBusinessLogic.dll

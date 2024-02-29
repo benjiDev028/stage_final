@@ -1,0 +1,14 @@
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\bin\Debug\net8.0\CommentDataAccess.deps.json
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\bin\Debug\net8.0\CommentDataAccess.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\bin\Debug\net8.0\CommentDataAccess.pdb
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.csproj.AssemblyReference.cache
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.AssemblyInfoInputs.cache
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.AssemblyInfo.cs
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.csproj.CoreCompileInputs.cache
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\refint\CommentDataAccess.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.pdb
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\ref\CommentDataAccess.dll
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\bin\Debug\net8.0\CommentDataAccess.runtimeconfig.json
+E:\repos\2023\formation\stage_final\CommentApi\CommentDataAccess\obj\Debug\net8.0\CommentDataAccess.genruntimeconfig.cache
