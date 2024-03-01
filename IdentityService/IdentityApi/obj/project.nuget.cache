@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fRGodfI6aYKLMZj4soU2u6b65kKD0SxF5r2HzbGUf3rFQ8+Vy8oaGKPZ8TTp0AvATv74VcFyMdPcprIAf0gRtg==",
+  "dgSpecHash": "KLa6lRMHKDR52RU2RfKc6jPgmUw8xw4AWtZkHBQeI+nNfR+j2ss9E+Z9h1GemlvH7g3dnrIAm9UGsCnFgT/cdA==",
   "success": true,
-  "projectFilePath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityApi\\IdentityApi.csproj",
+  "projectFilePath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityApi\\IdentityApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

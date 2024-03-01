@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\repos\\2023\\formation\\IdentityService\\IdentityApi\\IdentityApi.csproj": {}
+    "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityApi\\IdentityApi.csproj": {}
   },
   "projects": {
-    "E:\\repos\\2023\\formation\\IdentityService\\IdentityApi\\IdentityApi.csproj": {
+    "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityApi\\IdentityApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\repos\\2023\\formation\\IdentityService\\IdentityApi\\IdentityApi.csproj",
+        "projectUniqueName": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityApi\\IdentityApi.csproj",
         "projectName": "IdentityApi",
-        "projectPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityApi\\IdentityApi.csproj",
+        "projectPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityApi\\IdentityApi.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityApi\\obj\\",
+        "outputPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj": {
-                "projectPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj"
+              "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj": {
+                "projectPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj": {
+    "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj",
+        "projectUniqueName": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj",
         "projectName": "IdentityBusinessLogic",
-        "projectPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj",
+        "projectPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\obj\\",
+        "outputPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -118,8 +118,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\repos\\2023\\formation\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj": {
-                "projectPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj"
+              "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj": {
+                "projectPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj"
               }
             }
           }
@@ -163,14 +163,14 @@
         }
       }
     },
-    "E:\\repos\\2023\\formation\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj": {
+    "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\repos\\2023\\formation\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
+        "projectUniqueName": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
         "projectName": "IdentityDataAccess",
-        "projectPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
+        "projectPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityDataAccess\\obj\\",
+        "outputPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

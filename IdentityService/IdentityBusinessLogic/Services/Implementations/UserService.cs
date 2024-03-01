@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using IdentityBusinessLogic.DTO;
+using IdentityBusinessLogic.Exceptions;
 using IdentityBusinessLogic.Services.Interfaces;
 using IdentityDataAccess.Models;
 using IdentityDataAccess.Repositories.Interfaces;
@@ -37,6 +38,11 @@ namespace IdentityBusinessLogic.Services.Implementations
             try
             {
                 var userToDeleted = await _repository.DeleteAsync(id);
+
+                if (userToDeleted == null)
+                {
+                    throw new NotFoundException( "there is not  user with this id ");
+                }
                 return userToDeleted;
             }
             catch
@@ -51,6 +57,10 @@ namespace IdentityBusinessLogic.Services.Implementations
             try
             {
                 var userFound = await _repository.GetByIdAsync(id);
+                if(userFound == null)
+                {
+                    throw new NotFoundException(" le user n'existe pas ");
+                }
                 return _mapper.Map<UserDto>(userFound);
             }
             catch

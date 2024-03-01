@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4y/njzLIxEeTW/FkI2kaa7ykfQHPvW7dgMs/0BI3mp8CvmA+Iz0cJWV5RViplsGdWkWI4+ieu25OGC9kLmuyqg==",
+  "dgSpecHash": "rgcaoqnFYF0AsDTSnU9RciLYFwXjExHgWLHZOMLYjDaQofuZI89kuLBwvNjrAJip+SYcNQuAr523L0Q+5Dw1IA==",
   "success": true,
-  "projectFilePath": "E:\\repos\\2023\\formation\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj",
+  "projectFilePath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityBusinessLogic\\IdentityBusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
