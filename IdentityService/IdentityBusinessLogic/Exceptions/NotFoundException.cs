@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IdentityBusinessLogic.Exception
+namespace IdentityBusinessLogic.Exceptions
 {
-    internal class NotFoundException
+    internal class NotFoundException : Exception
     {
+        public NotFoundException(string message) : base(message) { }
     }
 }

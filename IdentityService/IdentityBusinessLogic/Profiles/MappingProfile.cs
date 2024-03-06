@@ -15,7 +15,7 @@ namespace IdentityBusinessLogic.Profiles
         public MappingProfile() 
 
         {
-            //comment faire passser les donnees entre les classes  
+            // faire passser les donnees entre les classes  
             CreateMap<UserDto, User>().ReverseMap();
             
         }

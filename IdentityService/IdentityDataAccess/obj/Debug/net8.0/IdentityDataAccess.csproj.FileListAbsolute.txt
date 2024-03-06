@@ -26,3 +26,17 @@ E:\repos\2023\formation\IdentityService\IdentityDataAccess\obj\Debug\net8.0\refi
 E:\repos\2023\formation\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.pdb
 E:\repos\2023\formation\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.genruntimeconfig.cache
 E:\repos\2023\formation\IdentityService\IdentityDataAccess\obj\Debug\net8.0\ref\IdentityDataAccess.dll
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\bin\Debug\net8.0\IdentityDataAccess.deps.json
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\bin\Debug\net8.0\IdentityDataAccess.runtimeconfig.json
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\bin\Debug\net8.0\IdentityDataAccess.dll
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\bin\Debug\net8.0\IdentityDataAccess.pdb
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.csproj.AssemblyReference.cache
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.AssemblyInfoInputs.cache
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.AssemblyInfo.cs
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.csproj.CoreCompileInputs.cache
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.dll
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\refint\IdentityDataAccess.dll
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.pdb
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\IdentityDataAccess.genruntimeconfig.cache
+E:\repos\2023\formation\stage_final\IdentityService\IdentityDataAccess\obj\Debug\net8.0\ref\IdentityDataAccess.dll

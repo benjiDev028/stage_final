@@ -35,8 +35,7 @@ namespace IdentityBusinessLogic.Services.Implementations
 
         public async Task<bool> DeleteAsync(Guid id)
         {
-            try
-            {
+            
                 var userToDeleted = await _repository.DeleteAsync(id);
 
                 if (userToDeleted == null)
@@ -44,29 +43,22 @@ namespace IdentityBusinessLogic.Services.Implementations
                     throw new NotFoundException( "there is not  user with this id ");
                 }
                 return userToDeleted;
-            }
-            catch
-            {
-                throw new Exception("user cannot be deteled");
-            }
+            
+           
          
         }
 
         public async Task<UserDto> GetByIdAsync(Guid id)
         {
-            try
-            {
+            
                 var userFound = await _repository.GetByIdAsync(id);
-                if(userFound == null)
+                if (userFound is null)
                 {
                     throw new NotFoundException(" le user n'existe pas ");
                 }
                 return _mapper.Map<UserDto>(userFound);
-            }
-            catch
-            {
-                throw new Exception(" user GetByid cannot be selected");
-            }
+            
+           
             
         }
 
