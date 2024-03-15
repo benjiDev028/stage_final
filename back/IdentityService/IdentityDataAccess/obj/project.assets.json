@@ -4023,11 +4023,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
+      "projectUniqueName": "E:\\repos\\2023\\formation\\stage_final\\back\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
       "projectName": "IdentityDataAccess",
-      "projectPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
+      "projectPath": "E:\\repos\\2023\\formation\\stage_final\\back\\IdentityService\\IdentityDataAccess\\IdentityDataAccess.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\repos\\2023\\formation\\stage_final\\IdentityService\\IdentityDataAccess\\obj\\",
+      "outputPath": "E:\\repos\\2023\\formation\\stage_final\\back\\IdentityService\\IdentityDataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -30,6 +30,7 @@ namespace CommentBusinessLogic.Services.Implementations
                 var isCreated = await _repository.CreateCommentAsync(newComment);
 
                 return isCreated;
+
             }catch(Exception e)
             {
                 throw e;
@@ -84,7 +85,7 @@ namespace CommentBusinessLogic.Services.Implementations
             {
                 var comment = _mapper.Map<Commentaire>(commentaire);
 
-                var commentUp = await _repository.UpdateCommentAsync(comment.idComment);
+                var commentUp = await _repository.UpdateCommentAsync(comment.IdComment);
                 return  _mapper.Map<CommentDto>(commentUp);
 
             }catch(Exception e)

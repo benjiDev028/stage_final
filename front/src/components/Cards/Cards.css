@@ -1,0 +1,89 @@
+/* Cards.css */
+.container {
+  /* Ajoutez un fond clair ou une teinte spécifique si votre site a une couleur de fond spécifique */
+  background-color: #fff; /* Exemple : blanc, mais ajustez selon votre design */
+}
+
+.card {
+  /* Ajoutez une ombre subtile pour un effet de profondeur, correspondant à l'esthétique du site */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Ajoutez un arrondi aux cartes si cela correspond au style de votre site */
+  border-radius: 8px;
+  border-color: #3a80a0;
+  /* Transition pour les effets au survol */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  /* Un léger effet au survol pour donner de la vie à la carte */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Ajustez la hauteur selon le ratio désiré */
+  object-fit: cover; /* Couvre la zone de l'image sans la déformer */
+  border-top-left-radius: 8px; /* Arrondi en haut de l'image pour suivre la forme de la carte */
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px; /* Ajustez selon l'espace désiré autour du contenu */
+  background-color: #f8f9fa; /* Couleur de fond pour le corps de la carte, peut-être clair pour contraster avec le titre du site */
+}
+
+.card-title {
+  color: #ffb062; /* Couleur de votre choix, ici un gris foncé pour le contraste */
+  font-size: 1.25rem; /* Ajustez selon la taille de police désirée */
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  flex-grow: 1;
+  color: #666; /* Couleur pour le texte de description */
+}
+
+.btn-primary {
+  background-color: #3a80a0; /* Bleu primaire, mais peut être ajusté pour correspondre à la palette du site */
+  border-color: #3a80a0;
+  /* Ajoutez un effet de survol correspondant aux autres boutons du site */
+}
+
+.btn-primary:hover {
+  background-color: #361e85; /* Assombrir au survol */
+  border-color: #361e85;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Make sure this is above everything else */
+}
+
+.modal-content {
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}

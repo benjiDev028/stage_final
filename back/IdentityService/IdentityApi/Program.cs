@@ -6,6 +6,8 @@ using IdentityDataAccess.Repositories.Interfaces;
 using IdentityDataAccess.Repositories.Implementations;
 using IdentityBusinessLogic.Services.Interfaces;
 using IdentityBusinessLogic.Services.Implementations;
+using Microsoft.Extensions.Configuration;
+using IdentityApi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,24 @@ builder.Services.AddScoped<IRepository,UserRepository>()
     .AddScoped<IUserService,UserService>()
     .AddScoped<IUserAuthenticate, UserAuthenticate>()
     .AddScoped<ICredentialsService, CredentialsService>();
+
+//configuration de RabbitMQ
+builder.Services.AddOptions<RabbitMQConfiguration>().Bind(builder.Configuration.GetSection("RabbitMQ"));
+
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        var options = context.GetRequiredService<IOptions<RabbitMQConfigurations>>().Value;
+
+        cfg.Host(options.Host, h =>
+        {
+            h.Username(options.Username);
+            h.Password(options.Password);
+        });
+    });
+});
+}
 
 
 builder.Services.AddControllers();

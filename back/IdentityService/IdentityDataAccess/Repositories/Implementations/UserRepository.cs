@@ -56,12 +56,15 @@ namespace IdentityDataAccess.Repositories.Implementations
 
         public async Task<User> UpdateAsync(User user)
         {
-            var updateUser = await _userContext.Users.FindAsync(user.Id);
+            var updateUser =  await _userContext.Users.Where(u => u.Id.Equals(u.Id)).FirstAsync();
+            
+
 
             updateUser.FirstName = user.FirstName;
             updateUser.LastName = user.LastName;
             updateUser.Email = user.Email;
             updateUser.Username = user.Username;
+
 
 
             await _userContext.SaveChangesAsync();
@@ -79,5 +82,7 @@ namespace IdentityDataAccess.Repositories.Implementations
 
             return true;
         }
+
+       
     }
 }

@@ -50,7 +50,7 @@ namespace CommentDataAccess.Repositories.Implementations
             var commentUp = await _commentContext.Commentaires.FindAsync(commentaire);
 
             commentUp.Content = commentaire.Content;
-            commentUp.nombreEtoile = commentaire.nombreEtoile;
+            commentUp.NombreEtoile = commentaire.NombreEtoile;
             commentUp.Datepublication = DateTime.Now;
 
              _commentContext.Commentaires.Update(commentUp);

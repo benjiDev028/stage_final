@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8CForNxg0DxmXniA9qBPzrMkBEZCvmsSO6pJmyLGGarFLcBNI1DNljrT06n/Hi/iyf80xxl/SBquIZXOmpJ9vA==",
+  "dgSpecHash": "+9eM2H8cJNpopddEUcJAytV6OHrDTFsnFBrXEofxRfxrR6qWauZwtA4bg6C7wG3GTuS8ptR+8tI/HoYu1OQFBw==",
   "success": true,
-  "projectFilePath": "E:\\repos\\2023\\formation\\stage_final\\CommentApi\\CommentDataAccess\\CommentDataAccess.csproj",
+  "projectFilePath": "E:\\repos\\2023\\formation\\stage_final\\back\\CommentApi\\CommentDataAccess\\CommentDataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

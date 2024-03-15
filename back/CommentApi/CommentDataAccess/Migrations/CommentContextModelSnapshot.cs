@@ -24,7 +24,7 @@ namespace CommentDataAccess.Migrations
 
             modelBuilder.Entity("CommentDataAccess.Entities.Commentaire", b =>
                 {
-                    b.Property<Guid>("idComment")
+                    b.Property<Guid>("IdComment")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -35,15 +35,18 @@ namespace CommentDataAccess.Migrations
                     b.Property<DateTime>("Datepublication")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("idUser")
+                    b.Property<Guid>("IdAI")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("nombreEtoile")
+                    b.Property<Guid>("IdUser")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("NombreEtoile")
                         .HasColumnType("int");
 
-                    b.HasKey("idComment");
+                    b.HasKey("IdComment");
 
-                    b.HasIndex("idComment");
+                    b.HasIndex("IdComment");
 
                     b.ToTable("Commentaires");
                 });

@@ -23,7 +23,7 @@ namespace CommentDataAccess
             
 
             modelBuilder.Entity<Commentaire>()
-                .HasIndex(commentaire => commentaire.idComment);
+                .HasIndex(commentaire => commentaire.IdComment);
 
             base.OnModelCreating(modelBuilder);
         }

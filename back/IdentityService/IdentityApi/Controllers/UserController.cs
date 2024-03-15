@@ -1,10 +1,15 @@
 ﻿using AutoMapper;
+using IdentityApi.Requests;
+using IdentityApi.Responses;
 using IdentityBusinessLogic.DTO;
 using IdentityBusinessLogic.Services.Implementations;
 using IdentityBusinessLogic.Services.Interfaces;
 using IdentityDataAccess.Models;
+using IdentityDataAccess.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using IdentityBusinessLogic.Exceptions;
+
 
 namespace IdentityApi.Controllers
 {
@@ -30,7 +35,8 @@ namespace IdentityApi.Controllers
         public async Task<IActionResult> getByEmail(string email)
         {
             var userByEmail = await _userService.GetUserByEmailAsync(email);
-            return Ok(userByEmail);
+            var userResponse = _mapper.Map<UserResponse>(userByEmail);
+            return Ok(userResponse);
         }
 
 
@@ -95,7 +101,7 @@ namespace IdentityApi.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete([FromBody] Guid Id)
+        public async Task<IActionResult> DeleteUser([FromBody] Guid Id)
         {
             var userDeleted = await _userService.DeleteAsync(Id);
             return Ok(userDeleted);
@@ -108,29 +114,34 @@ namespace IdentityApi.Controllers
         public async Task<IActionResult> GetbyId(Guid Id)
         {
             var userSelected = await _userService.GetByIdAsync(Id);
-            return Ok(userSelected);
+            var userResponse = _mapper.Map<UserResponse>(userSelected);
+
+            return Ok(userResponse);
         }
 
         [HttpGet("allUsers")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Users()
+        public async Task<IActionResult> GetUsers()
         {
             var users = await _userService.GetAllAsync();
-            return Ok(users);
+            var userResponse = _mapper.Map<List<UserResponse>>(users);
+            return Ok(userResponse);
         }
 
-        [HttpPut("updateUser")]
+        [HttpPut("updateUser/{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateAsync(User user)
+        public async Task<IActionResult> UpdatedUserAsync([FromBody] UserUpdateRequest user)
         {
+            
             var userUp = _mapper.Map<UserDto>(user);
             return Ok(await _userService.UpdateAsync(userUp));
-           
+
         }
+
 
     }
 

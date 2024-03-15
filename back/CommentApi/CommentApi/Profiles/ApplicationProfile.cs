@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CommentApi.Requests;
+using CommentApi.Responses;
 using CommentBusinessLogic.DTO;
 
 namespace CommentApi.Profiles
@@ -9,6 +10,8 @@ namespace CommentApi.Profiles
         public ApplicationProfile()
         {
             CreateMap<commentPostRequest, CommentDto>();
+            CreateMap<CommentDto, commentResponse>();
+
         } 
     }
 }

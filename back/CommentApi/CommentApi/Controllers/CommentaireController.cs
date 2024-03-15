@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CommentApi.Requests;
+using CommentApi.Responses;
 using CommentBusinessLogic.DTO;
 using CommentBusinessLogic.Services.Interfaces;
 using CommentDataAccess.Entities;
@@ -37,8 +38,9 @@ namespace CommentApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> getComment (Guid id)
         {
-            var commentSel = await _commentService.GetCommentAsync(id);
-            return Ok(commentSel);
+            var commentSelected = await _commentService.GetCommentAsync(id);
+            var commentResponse = _mapper.Map<commentResponse>(commentSelected);
+            return Ok(commentResponse);
         }
 
         [HttpGet("allComments")]
@@ -48,8 +50,9 @@ namespace CommentApi.Controllers
         public async Task<IActionResult> getAllComment()
         {
             var comments = await _commentService.GetAllCommentsAsync();
+            var commentRes = _mapper.Map<List<commentResponse>>(comments);
 
-            return Ok(comments);
+            return Ok(commentRes);
         }
 
         [HttpDelete("Id")]
@@ -68,9 +71,10 @@ namespace CommentApi.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        public async Task<IActionResult> UpdateComment(Commentaire comm)
+        public async Task<IActionResult> UpdateComment(commentResponse comm)
         {
             var upCommentMap = _mapper.Map<CommentDto>(comm);
+
             return  Ok(await _commentService.UpdateCommentAsync(upCommentMap));
 
         }

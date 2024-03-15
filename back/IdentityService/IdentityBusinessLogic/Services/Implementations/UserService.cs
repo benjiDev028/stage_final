@@ -76,16 +76,26 @@ namespace IdentityBusinessLogic.Services.Implementations
         {
             try
             {
-                var userUpdatedMap = _mapper.Map<User>(user);
-                var userUpdated = await _repository.UpdateAsync(userUpdatedMap);
+                var existingUser = await _repository.GetByIdAsync(user.Id);
+                if (existingUser is null)
+                {
+                    throw new NotFoundException("Utilisateur avec cet email n'existe pas.");
+                }
 
-                return _mapper.Map<UserDto>(userUpdated);
+                // Mettez à jour les propriétés de l'utilisateur existant
+                existingUser.FirstName = user.FirstName;
+                existingUser.LastName = user.LastName;
+                existingUser.Username = user.Username;
+                
+
+                var updatedUser = await _repository.UpdateAsync(existingUser);
+
+                return _mapper.Map<UserDto>(updatedUser);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("update impossible");
+                throw new Exception("Impossible de mettre à jour l'utilisateur.", ex);
             }
-
         }
 
         public async Task<List<UserDto>> GetAllAsync()
@@ -109,6 +119,6 @@ namespace IdentityBusinessLogic.Services.Implementations
             throw new NotImplementedException();
         }
 
-
+      
     }
 }

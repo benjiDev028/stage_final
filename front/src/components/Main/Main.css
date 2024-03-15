@@ -1,0 +1,32 @@
+
+.bg-cover {
+    background-size: cover !important;
+}
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+body {
+    min-height: 100vh;
+}
+
+
+.jumbotron {
+    background: url('../../assets/mainpic.jpg') no-repeat center center;
+    background-size: cover; /* Couvre la zone disponible sans perdre les proportions */
+    background-attachment: fixed; /* Optionnel: fixe l'image de fond lors du défilement */
+    width: 100%; /* S'assure que le jumbotron prend toute la largeur */
+    min-height: 50vh; /* Minimum 50% de la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+  }
+  

@@ -11,6 +11,7 @@ namespace IdentityApi.Profiles
             CreateMap<UserRegisterRequest, UserDto>();
             CreateMap<UserDto,UserResponse>();
             CreateMap<UserLoginRequest, UserDto>();
+            CreateMap<UserUpdateRequest, UserDto>();
         }
     }
 }
