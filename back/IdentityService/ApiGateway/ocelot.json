@@ -33,7 +33,7 @@
 
 
     {
-      "DownstreamPathTemplate": "/api/User/DeleteUser/{id}",
+      "DownstreamPathTemplate": "/api/User/deleteById/{Id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -41,13 +41,13 @@
           "Port": 5250
         }
       ],
-      "UpstreamPathTemplate": "/users/DeleteById/{id}",
+      "UpstreamPathTemplate": "/users/delete/{Id}",
       "UpstreamHttpMethod": [ "Delete" ]
     },
 
 
     {
-      "DownstreamPathTemplate": "/api/User/selectedId/{id}",
+      "DownstreamPathTemplate": "/api/User/selectedId/{Id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {

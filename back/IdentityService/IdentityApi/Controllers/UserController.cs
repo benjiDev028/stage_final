@@ -42,17 +42,17 @@ namespace IdentityApi.Controllers
 
 
 
-        [HttpDelete("delById")]
+        [HttpDelete("deleteById/{Id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteUser([FromBody] Guid Id)
+        public async Task<IActionResult> DeleteUser(Guid Id)
         {
             var userDeleted = await _userService.DeleteAsync(Id);
             return Ok(userDeleted);
         }
 
-        [HttpGet("selectedId")]
+        [HttpGet("selectedId/{Id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
