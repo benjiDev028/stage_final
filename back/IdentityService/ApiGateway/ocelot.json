@@ -15,7 +15,7 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
 
-    //api <auth> register 
+    //api <auth> register
 
     {
       "DownstreamPathTemplate": "/api/Authentification/registration",
@@ -27,6 +27,19 @@
         }
       ],
       "UpstreamPathTemplate": "/auth/register",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    //api connexion auth
+    {
+      "DownstreamPathTemplate": "/api/Authentification/connection",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/connection",
       "UpstreamHttpMethod": [ "Post" ]
     },
 
@@ -59,7 +72,7 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
 
-
+    //all users
     {
       "DownstreamPathTemplate": "/api/User/allUsers",
       "DownstreamScheme": "http",
