@@ -30,8 +30,7 @@
       "UpstreamHttpMethod": [ "Post" ]
     },
 
-
-
+    //api deleted 
     {
       "DownstreamPathTemplate": "/api/User/deleteById/{Id}",
       "DownstreamScheme": "http",
@@ -55,7 +54,7 @@
           "Port": 5250
         }
       ],
-      "UpstreamPathTemplate": "/users/GetById/{id}",
+      "UpstreamPathTemplate": "/users/GetById/{Id}",
       "UpstreamHttpMethod": [ "Get" ]
     },
 
