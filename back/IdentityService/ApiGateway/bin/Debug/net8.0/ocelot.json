@@ -1,0 +1,103 @@
+{
+  "Routes": [
+
+    //api  <User> get by email
+    {
+      "DownstreamPathTemplate": "/api/User/email/{email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/users/GetByEmail/{email}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    //api <auth> register 
+
+    {
+      "DownstreamPathTemplate": "/api/Authentification/registration",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/register",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/User/DeleteUser/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/users/DeleteById/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/User/selectedId/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/users/GetById/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/User/allUsers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/users/all",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/User/updateUser/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5250
+        }
+      ],
+      "UpstreamPathTemplate": "/users/updateUser/{id}",
+      "UpstreamHttpMethod": [ "Put" ]
+    }
+  ],
+
+
+  "GlobalConfiguration": {
+    "RequestIdKey": "Ocelot-Request-Id",
+    "AdministrationPath": "/administration",
+    "RateLimitOptions": {
+      "ClientIdHeader": "Client-Id",
+      "QuotaExceededMessage": "Quota exceeded",
+      "RateLimitCounterPrefix": "ocelot",
+      "DisableRateLimitHeaders": false,
+      "HttpStatusCode": 429
+    }
+  }
+}

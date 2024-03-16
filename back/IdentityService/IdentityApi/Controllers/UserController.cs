@@ -28,7 +28,7 @@ namespace IdentityApi.Controllers
             _credentialsService = credentialsService;
             _mapper = mapper;
         }
-        [HttpGet("email")]
+        [HttpGet("email/{email}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -41,61 +41,6 @@ namespace IdentityApi.Controllers
 
 
 
-        [HttpPost("createUser")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Create([FromBody] UserDto user)
-        {
-            try
-            {
-                if (user == null)
-                {
-                    return BadRequest("User creation data is required.");
-                }
-
-                // Générez le hash et le sel du mot de passe
-                _credentialsService.CreatePasswordHash(user.Password, out byte[] passwordHash, out byte[] passwordSalt);
-
-                // Construisez l'objet UserDto avec les informations fournies et le mot de passe hashé
-                var userDto = new UserDto
-                {
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Email = user.Email,
-                    Username = user.Username,
-                    PasswordHash = passwordHash,
-                    PasswordSalt = passwordSalt,
-                    Id = Guid.NewGuid(),
-                    RegistrationDate = DateTime.UtcNow
-
-                };
-
-                //créer l'utilisateur avec le UserDto
-                var result = await _userService.CreateAsync(userDto);
-                if (!result)
-                {
-                    return BadRequest("User could not be created.");
-                }
-
-                // Créez un token pour l'utilisateur
-                var token = _credentialsService.CreateToken(userDto);
-                var refreshToken = _credentialsService.CreateRefreshToken();
-
-                // Retournez les données de l'utilisateur et les tokens
-                return Ok(new
-                {
-                    UserId = userDto.Id,
-                    Token = token,
-                    RefreshToken = refreshToken
-                });
-            }
-            catch (Exception e)
-            {
-                // Loguez l'exception et retournez un message d'erreur générique au client
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the user.");
-            }
-        }
 
         [HttpDelete("delById")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

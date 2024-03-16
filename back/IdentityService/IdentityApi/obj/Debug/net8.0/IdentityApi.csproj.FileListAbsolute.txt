@@ -570,3 +570,12 @@ E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\n
 E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\MassTransit.Abstractions.dll
 E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
 E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\RabbitMQ.Client.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\FluentValidation.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\IPAddressRange.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\Ocelot.dll

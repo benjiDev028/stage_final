@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using IdentityApi.Configurations;
 using MassTransit;
 using Microsoft.Extensions.Options;
+using Ocelot.Middleware;
+using Ocelot.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +47,7 @@ builder.Services.AddMassTransit(x =>
 
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
