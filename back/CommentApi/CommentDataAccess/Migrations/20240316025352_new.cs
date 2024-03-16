@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CommentDataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class news : Migration
+    public partial class @new : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,21 +15,22 @@ namespace CommentDataAccess.Migrations
                 name: "Commentaires",
                 columns: table => new
                 {
-                    idComment = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    idUser = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdComment = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdAI = table.Column<int>(type: "int", nullable: false),
+                    IdUser = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nombreEtoile = table.Column<int>(type: "int", nullable: false),
+                    NombreEtoile = table.Column<int>(type: "int", nullable: false),
                     Datepublication = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Commentaires", x => x.idComment);
+                    table.PrimaryKey("PK_Commentaires", x => x.IdComment);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Commentaires_idComment",
+                name: "IX_Commentaires_IdComment",
                 table: "Commentaires",
-                column: "idComment");
+                column: "IdComment");
         }
 
         /// <inheritdoc />

@@ -66,16 +66,16 @@ namespace CommentApi.Controllers
         }
 
 
-        [HttpPut("upComment")]
+        [HttpPut("updateComment/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        public async Task<IActionResult> UpdateComment(commentResponse comm)
+        public async Task<IActionResult> UpdateComment([FromBody]commentUpdateRequest comment)
         {
-            var upCommentMap = _mapper.Map<CommentDto>(comm);
+            var updatedComment = _mapper.Map<CommentDto>(comment);
 
-            return  Ok(await _commentService.UpdateCommentAsync(upCommentMap));
+            return  Ok(await _commentService.UpdateCommentAsync(updatedComment));
 
         }
     }

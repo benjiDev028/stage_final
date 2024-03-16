@@ -7,6 +7,10 @@ using CommentDataAccess.Repositories.Interfaces;
 using CommentDataAccess.Repositories.Implementations;
 using CommentBusinessLogic.Services.Interfaces;
 using CommentBusinessLogic.Services.Implementations;
+using CommentApi.Configurations;
+using Microsoft.Extensions.Configuration;
+using MassTransit;
+using Microsoft.Extensions.Options;
 
 
 
@@ -25,10 +29,22 @@ x => x.MigrationsAssembly("CommentDataAccess")));
 builder.Services.AddAutoMapper(typeof(ApplicationProfile), typeof(MappingProfiles));
 
 builder.Services.AddScoped<IRepository, CommentRepository>()
-    .AddScoped<ICommentService, commentService>();
-    
+.AddScoped<ICommentService, commentService>();
+builder.Services.AddOptions<RabbitMQConfiguration>().Bind(builder.Configuration.GetSection("RabbitMQ"));
 
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        var options = context.GetRequiredService<IOptions<RabbitMQConfiguration>>().Value;
 
+        cfg.Host(options.Host, h =>
+        {
+            h.Username(options.Username);
+            h.Password(options.Password);
+        });
+    });
+});
 
 
 

@@ -47,13 +47,13 @@ namespace CommentDataAccess.Repositories.Implementations
 
         public async Task<Commentaire> UpdateCommentAsync(Commentaire commentaire)
         {
-            var commentUp = await _commentContext.Commentaires.FindAsync(commentaire);
+            var commentUp = await _commentContext.Commentaires.Where(u => u.IdComment.Equals(u.IdComment)).FirstAsync();
 
             commentUp.Content = commentaire.Content;
             commentUp.NombreEtoile = commentaire.NombreEtoile;
             commentUp.Datepublication = DateTime.Now;
 
-             _commentContext.Commentaires.Update(commentUp);
+             
             await _commentContext.SaveChangesAsync();
             return  commentUp;
         }

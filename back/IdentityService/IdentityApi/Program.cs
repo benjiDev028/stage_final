@@ -8,6 +8,8 @@ using IdentityBusinessLogic.Services.Interfaces;
 using IdentityBusinessLogic.Services.Implementations;
 using Microsoft.Extensions.Configuration;
 using IdentityApi.Configurations;
+using MassTransit;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +32,7 @@ builder.Services.AddMassTransit(x =>
 {
     x.UsingRabbitMq((context, cfg) =>
     {
-        var options = context.GetRequiredService<IOptions<RabbitMQConfigurations>>().Value;
+        var options = context.GetRequiredService<IOptions<RabbitMQConfiguration>>().Value;
 
         cfg.Host(options.Host, h =>
         {
@@ -39,7 +41,7 @@ builder.Services.AddMassTransit(x =>
         });
     });
 });
-}
+
 
 
 builder.Services.AddControllers();

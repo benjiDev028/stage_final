@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CommentBusinessLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f1c467d951ba6a62ac25180a84ee7c7103f3d94")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2235fc7c892f87aff06a48c5c3e8ab9c151ae01d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CommentBusinessLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CommentBusinessLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -35,8 +35,8 @@ namespace CommentDataAccess.Migrations
                     b.Property<DateTime>("Datepublication")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("IdAI")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdAI")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("IdUser")
                         .HasColumnType("uniqueidentifier");

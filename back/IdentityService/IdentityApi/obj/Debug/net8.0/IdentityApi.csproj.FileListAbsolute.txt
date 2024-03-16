@@ -566,3 +566,7 @@ E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\obj\Debug\n
 E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\obj\Debug\net8.0\IdentityApi.pdb
 E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\obj\Debug\net8.0\IdentityApi.genruntimeconfig.cache
 E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\obj\Debug\net8.0\ref\IdentityApi.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\MassTransit.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\MassTransit.Abstractions.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
+E:\repos\2023\formation\stage_final\back\IdentityService\IdentityApi\bin\Debug\net8.0\RabbitMQ.Client.dll

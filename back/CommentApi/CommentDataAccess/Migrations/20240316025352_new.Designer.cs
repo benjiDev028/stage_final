@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommentDataAccess.Migrations
 {
     [DbContext(typeof(CommentContext))]
-    [Migration("20240308203911_update")]
-    partial class update
+    [Migration("20240316025352_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,8 +38,8 @@ namespace CommentDataAccess.Migrations
                     b.Property<DateTime>("Datepublication")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("IdAI")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdAI")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("IdUser")
                         .HasColumnType("uniqueidentifier");

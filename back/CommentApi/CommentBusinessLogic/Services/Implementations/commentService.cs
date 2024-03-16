@@ -83,15 +83,31 @@ namespace CommentBusinessLogic.Services.Implementations
         {
             try
             {
-                var comment = _mapper.Map<Commentaire>(commentaire);
+                
+                var selectedComment = await _repository.GetCommentAsync(commentaire.IdComment);
 
-                var commentUp = await _repository.UpdateCommentAsync(comment.IdComment);
-                return  _mapper.Map<CommentDto>(commentUp);
+               
+                if (selectedComment != null)
+                {
+                    selectedComment.Content = commentaire.Content;
+                    selectedComment.NombreEtoile = commentaire.NombreEtoile;
 
-            }catch(Exception e)
+                  
+                    var updatedComment = await _repository.UpdateCommentAsync(selectedComment);
+
+                  
+                    return _mapper.Map<CommentDto>(updatedComment);
+                }
+
+               
+                throw new KeyNotFoundException("Comment not found with the provided ID.");
+            }
+            catch (Exception)
             {
-                throw e;
+                
+                throw; 
             }
         }
+
     }
 }

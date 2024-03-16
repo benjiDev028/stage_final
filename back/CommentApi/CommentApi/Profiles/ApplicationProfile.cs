@@ -11,6 +11,8 @@ namespace CommentApi.Profiles
         {
             CreateMap<commentPostRequest, CommentDto>();
             CreateMap<CommentDto, commentResponse>();
+            CreateMap<commentUpdateRequest, CommentDto>();
+            CreateMap<CommentDto, commentResponse>();
 
         } 
     }
