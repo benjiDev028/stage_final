@@ -1,7 +1,8 @@
 import React from "react";
 import './Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle'
+import 'bootstrap/dist/js/bootstrap.bundle';
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -27,7 +28,7 @@ const Header = () => {
               <a className="nav-link" href="/#">Services</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/#">Sign In</a>
+              <Link to='/login' className="nav-link" >Sign In</Link>
             </li>
             </ul>
         </div>

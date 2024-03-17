@@ -1,17 +1,26 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import  Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Cards from './components/Cards/Cards.jsx';
+
+import {BrowserRouter as  Router, Route, Routes} from "react-router-dom";
+import Home from './pages/Home/home.js';
+import Login from './pages/Login/login';
+
 function App() {
   return (
+
+    <Router>
+
     
     <div className="App">
-     <Header/>
-     <Main/>
-     <Cards/>
+      <Routes>
+      <Route path="/" exact element={<Home/>} />
+      <Route path="/login" element={<Login/>} />
+
+      </Routes>
+     
     </div>
+    </Router>
   );
 }
 

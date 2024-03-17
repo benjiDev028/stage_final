@@ -27,6 +27,8 @@ builder.Services.AddScoped<IRepository,UserRepository>()
     .AddScoped<IUserAuthenticate, UserAuthenticate>()
     .AddScoped<ICredentialsService, CredentialsService>();
 
+
+
 //configuration de RabbitMQ
 builder.Services.AddOptions<RabbitMQConfiguration>().Bind(builder.Configuration.GetSection("RabbitMQ"));
 

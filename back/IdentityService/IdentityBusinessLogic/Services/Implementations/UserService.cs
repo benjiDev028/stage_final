@@ -23,6 +23,11 @@ namespace IdentityBusinessLogic.Services.Implementations
             {
                 //to longwe na object ya type dto toke na object ya user(model, na dataAcceess)
                 var userToCreate = _mapper.Map<User>(user);
+                var VerifiedEmail = await _repository.GetUserByEmailAsync(user.Email);
+                if (VerifiedEmail != null)
+                {
+                    throw new AlreadyExistsException("email already Exist");
+                }
                 var isCreated = await _repository.CreateAsync(userToCreate);
                 
                 return isCreated;

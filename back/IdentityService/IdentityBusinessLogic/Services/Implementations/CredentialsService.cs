@@ -1,5 +1,6 @@
 ﻿using IdentityBusinessLogic.DTO;
 using IdentityBusinessLogic.Services.Interfaces;
+using IdentityDataAccess.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -12,6 +13,8 @@ namespace IdentityBusinessLogic.Services.Implementations
     public class CredentialsService : ICredentialsService
     {
         private readonly IConfiguration _configuration ;
+        private readonly IRepository _repository;
+
 
         public CredentialsService(IConfiguration configuration)
         {

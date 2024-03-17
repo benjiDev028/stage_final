@@ -32,7 +32,7 @@ namespace IdentityBusinessLogic.Services.Implementations
             var refreshToken = _credentialsService.CreateRefreshToken();
 
             userFound.RefreshToken = refreshToken;
-            await _userService.UpdateAsync(userFound);
+            //await _userService.UpdateAsync(userFound);
 
             return (accessToken, refreshToken);
         }
@@ -45,7 +45,7 @@ namespace IdentityBusinessLogic.Services.Implementations
             var newRefreshToken = _credentialsService.CreateRefreshToken();
 
             user.RefreshToken = newRefreshToken;
-            await _userService.UpdateAsync(user);
+            //await _userService.UpdateAsync(user);
 
             return (accessToken, newRefreshToken);
         }
