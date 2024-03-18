@@ -2,32 +2,46 @@ import React, { useState } from 'react';
 import './login.css';
 import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
-import { loginUser } from '../../services/AuthService';
+import { loginUser,getUserIdFromToken } from '../../services/AuthService'
+import Main from '../../components/Main/Main';
+
+
+
+
+// Utilisez la fonction isLoggedIn pour vérifier si l'utilisateur est connecté
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // Ajouté pour afficher les messages d'erreur
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage(''); // Réinitialise le message d'erreur précédent
     try {
-      
-      
-      const userData = await loginUser(email, password);
-      console.log("user connecte", userData);
+      const token = await loginUser(email, password);
+      if (token) {
+        const userId = getUserIdFromToken(token);
+        alert("ID utilisateur:" + userId);
+        // Continuez avec l'ID utilisateur selon vos besoins
+      }
     } catch (error) {
       console.error('Erreur de connexion:', error.message);
-      // Afficher un message d'erreur à l'utilisateur, par exemple
+      setErrorMessage("email ou ot de passe incorrect"); // Met à jour le message d'erreur pour l'afficher
     }
-  };
+  
 
+};
   return (
     <div>
       <Header />
+      <Main/><br/><br/><br/><br/><br/>
+
       <div className="container">
         <div className="screen">
           <div className="screen__content">
             <form className="login" onSubmit={handleSubmit}>
+            
               <div className="login__field">
                 <i className="login__icon fas fa-user"></i>
                 <input
@@ -58,6 +72,9 @@ function Login() {
             <div className="social-login">
               <h3>Analysis S</h3>
               <div className="social-icons"></div>
+            </div>
+            <div className="log">
+              <p className='error'>{errorMessage && <div className="error-message">{errorMessage}</div>} </p>
             </div>
             <div className="login__create-account">
               <p className='link'>Vous n'avez pas de compte ? <Link className='link' to="/register">Créez-en un</Link></p>

@@ -14,6 +14,7 @@ namespace IdentityBusinessLogic.Services.Interfaces
         Task<UserDto> GetByIdAsync(Guid id);
         Task<List<UserDto>> GetAllAsync();
         Task<UserDto> GetUserByEmailAsync(string email);
+        Task<UserDto> GetUserByUsernameAsync(string username);
         Task<bool> CreateAsync(UserDto user);
         Task<UserDto> UpdateAsync(UserDto user);
         Task<bool> UpdatePasswordAsync(Guid id, byte[] hashPassword, byte[] saltPassword);

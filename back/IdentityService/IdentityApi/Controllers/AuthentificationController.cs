@@ -26,6 +26,7 @@ namespace IdentityApi.Controllers
         }
 
         [HttpPost("registration")]
+        [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Register(UserRegisterRequest user)
         {
@@ -41,7 +42,9 @@ namespace IdentityApi.Controllers
         
 
 
+
         [HttpPost("connection")]
+        [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

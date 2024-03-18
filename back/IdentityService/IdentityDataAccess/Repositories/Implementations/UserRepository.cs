@@ -83,6 +83,12 @@ namespace IdentityDataAccess.Repositories.Implementations
             return true;
         }
 
-       
+        public async Task<User?> GetUserByUsernameAsync(string username)
+        {
+
+            return await _userContext.Users
+                .Where(u => u.Username.Equals(username))
+                .FirstOrDefaultAsync();
+        }
     }
 }

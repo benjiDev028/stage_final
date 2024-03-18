@@ -19,23 +19,27 @@ namespace IdentityBusinessLogic.Services.Implementations
         }
         public async Task<bool> CreateAsync(UserDto user)
         {
-            try
-            {
+            
                 //to longwe na object ya type dto toke na object ya user(model, na dataAcceess)
                 var userToCreate = _mapper.Map<User>(user);
                 var VerifiedEmail = await _repository.GetUserByEmailAsync(user.Email);
-                if (VerifiedEmail != null)
+                var VerifiedUsername = await _repository.GetUserByUsernameAsync(user.Username);
+
+                if (VerifiedEmail != null )
                 {
                     throw new AlreadyExistsException("email already Exist");
+                    
                 }
+                if(VerifiedUsername != null)
+                {
+                    throw new AlreadyExistsException("username already Exist");
+                }
+                
                 var isCreated = await _repository.CreateAsync(userToCreate);
                 
-                return isCreated;
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
+               return isCreated;
+            
+            throw new ImpossibleException("impossible de creer un user");
         }
 
         public async Task<bool> DeleteAsync(Guid id)
@@ -72,15 +76,14 @@ namespace IdentityBusinessLogic.Services.Implementations
             var user = await _repository.GetUserByEmailAsync(email);
 
             if (user is null)
-                throw new Exception("There is no user with such email");
+                throw new NotFoundException("There is no user with such email");
 
             return _mapper.Map<UserDto>(user);
         }
 
         public async Task<UserDto> UpdateAsync(UserDto user)
         {
-            try
-            {
+           
                 var existingUser = await _repository.GetByIdAsync(user.Id);
                 if (existingUser is null)
                 {
@@ -96,27 +99,23 @@ namespace IdentityBusinessLogic.Services.Implementations
                 var updatedUser = await _repository.UpdateAsync(existingUser);
 
                 return _mapper.Map<UserDto>(updatedUser);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Impossible de mettre à jour l'utilisateur.", ex);
-            }
+            
+            
+                throw new ImpossibleException("Impossible de mettre à jour l'utilisateur.");
+            
         }
 
         public async Task<List<UserDto>> GetAllAsync()
         {
-            try
-            {
+            
              
                 var users =  await _repository.GetAllAsync();
                 return  _mapper.Map<List<UserDto>>(users);
-                 
-             
-              
-            }catch(Exception e)
-            {
-                throw e;
-            }
+
+
+            throw new ImpossibleException(" impossible de get tous les users");  
+           
+            
         }
 
         public Task<bool> UpdatePasswordAsync(Guid id, byte[] hashPassword, byte[] saltPassword)
@@ -124,6 +123,14 @@ namespace IdentityBusinessLogic.Services.Implementations
             throw new NotImplementedException();
         }
 
-      
+        public async Task<UserDto> GetUserByUsernameAsync(string username)
+        {
+            var userUsername = await _repository.GetUserByUsernameAsync(username);
+
+            if (userUsername != null)
+                throw new NotFoundException("username deja utilisE");
+
+            return _mapper.Map<UserDto>(userUsername);
+        }
     }
 }
