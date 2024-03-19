@@ -23,6 +23,7 @@ function Login() {
       if (token) {
         const userId = getUserIdFromToken(token);
         alert("ID utilisateur:" + userId);
+        window.location.replace('/method');
         // Continuez avec l'ID utilisateur selon vos besoins
       }
     } catch (error) {
