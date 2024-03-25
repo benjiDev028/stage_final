@@ -8,9 +8,14 @@
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+	background: linear-gradient(90deg, #fff, #fff);		
 }
 
+
+.lien{
+	text-align: center;
+	float: right;
+}
 .container {
 	display: flex;
 	align-items: center;
@@ -90,6 +95,12 @@ body {
 	width: 320px;
 	padding: 30px;
 	padding-top: 156px;
+}
+.login__create-account{
+	display: flex;
+	justify-content: center; /* Centrage horizontal */
+	align-items: center; /* Centrage vertical, si nécessaire */
+	text-align: center;
 }
 
 .login__field {

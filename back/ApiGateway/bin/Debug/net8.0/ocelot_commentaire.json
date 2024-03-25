@@ -1,0 +1,82 @@
+{
+  "Routes": [
+    //ecrire un commentaire
+    {
+      "DownstreamPathTemplate": "/api/Commentaire/post",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5124
+        }
+      ],
+      "UpstreamPathTemplate": "/review/post",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+
+    //selected un commentaire
+    {
+      "DownstreamPathTemplate": "/api/Commentaire/selectComment?id={id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5124
+        }
+      ],
+      "UpstreamPathTemplate": "/review/select",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    //tous les commenataires
+    {
+      "DownstreamPathTemplate": "/api/Commentaire/allComments",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5124
+        }
+      ],
+      "UpstreamPathTemplate": "/review/all",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    //supprimer un commentaire
+    {
+      "DownstreamPathTemplate": "/api/Commentaire/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5124
+        }
+      ],
+      "UpstreamPathTemplate": "/review/delete/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    //mise a jour dun commentaire
+    {
+      "DownstreamPathTemplate": "/api/Commentaire/updateComment/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5124
+        }
+      ],
+      "UpstreamPathTemplate": "/review/update/{id}",
+      "UpstreamHttpMethod": [ "Put" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "Ocelot-Request-Id",
+    "AdministrationPath": "/administration",
+    "RateLimitOptions": {
+      "ClientIdHeader": "Client-Id",
+      "QuotaExceededMessage": "Quota exceeded",
+      "RateLimitCounterPrefix": "ocelot",
+      "DisableRateLimitHeaders": false,
+      "HttpStatusCode": 429
+    }
+  }
+}

@@ -28,7 +28,7 @@ export { getUserIdFromToken, isLoggedIn };
 
 
 
-const Api_Url = "http://localhost:5205/auth";
+const Api_Url = "http://localhost:5086/auth";
 
 async function loginUser(email, password) {
     try {

@@ -3,6 +3,7 @@ import './register.css'; // Assurez-vous de créer le fichier CSS correspondant 
 import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
 import {RegisterUser} from '../../services/AuthService';
+import Main from '../../components/Main/Main';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -29,7 +30,8 @@ function Register() {
 
   return (
     <div>
-      <Header /><br/>
+      <Header />
+      <Main/><br/><br/><br/>
         <div className="container">
         <div className="screen">
           <div className="screen__content">
@@ -102,7 +104,9 @@ function Register() {
               <p className='error'>{errorMessage && <div className="error-message">{errorMessage}</div>} </p>
             </div>
             <div className="login__create-account">
-              <p className='link'>Already have an account? <Link className='link' to="/login">Login here</Link></p>
+            
+              <p className='log'> <Link to='/login' className="nav-link" > vous avez un compte ? Sign In</Link></p>
+            
             </div>
           </div>
           <div className="screen__background">

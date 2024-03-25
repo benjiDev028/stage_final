@@ -30,7 +30,8 @@ const Card = ({ image, title, text, detailedText }) => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div className="col-md-4">
+      
+    <div className="col-md-4 cards">    
       <div className="card">
         <img src={image} className="card-img-top" alt={title} />
         <div className="card-body">
@@ -48,18 +49,23 @@ const Card = ({ image, title, text, detailedText }) => {
         </div>
       </div>
     </div>
+  
   );
 };
 
 const Cards = () => {
   // Example detailed text added, you should replace these with the actual detailed information you want to show.
   return (
+    
+   
     <section className="container my-5">
+      
+      
       <div className="row">
         <Card
           image={ml}
           title="Deep Learning"
-          text="Le deep learning est une branche avancée de l'intelligence artificielle qui utilise 
+          text="est une branche avancée de l'intelligence artificielle qui utilise 
           des réseaux de neurones profonds..."
           detailedText="pour imiter le traitement de l'information par le cerveau humain.
                         Capable d'apprendre directement à partir des données, il excelle dans la reconnaissance de
@@ -70,7 +76,7 @@ const Cards = () => {
         <Card
           image={deep}
           title="Machine Learning"
-          text="Le machine learning est une technologie clé de l'intelligence artificielle
+          text="est une technologie clé de l'intelligence artificielle
           permettant aux ordinateurs d'apprendre à partir de données..."
           detailedText=" Sans être explicitement programmés
             pour chaque tâche, ils améliorent leurs performances grâce à l'expérience, identifiant des motifs
@@ -80,7 +86,7 @@ const Cards = () => {
         <Card
           image={NLP}
           title="Natural Language Processing"
-          text="Le NLP, ou traitement du langage naturel, est une discipline de l'IA 
+          text="traitement du langage naturel, est une discipline de l'IA 
           qui permet aux machines de comprendre et..."
           detailedText=" d'interagir avec le langage humain. Utilisé
            dans les chatbots, la traduction automatique et les assistants vocaux, le NLP transforme 
@@ -88,6 +94,7 @@ const Cards = () => {
            à utiliser."
         />
         <Card
+          className="cl"
           image={robot}
           title="Robotics and AI"
           text="La robotique et l'IA combinent la mécanique, l'électronique et
@@ -99,21 +106,24 @@ const Cards = () => {
               notamment la fabrication, la santé et le transport."
         />
         <Card
+         className="cl"
           image={tf}
           title="Tensorflow"
           text="TensorFlow est une bibliothèque open source développée par Google pour le calcul numérique et l'apprentissage automatique..."
           detailedText="Elle facilite la création de systèmes d'IA avec des outils pour développer, entraîner et déployer des modèles de machine learning et deep learning. Sa flexibilité et sa capacité à traiter de vastes ensembles de données en font un choix populaire parmi les chercheurs et les développeurs"
         />
 
-<Card
+          <Card
+           className="cl"
           image={llm}
           title="LLM"
-          text="Les LLM, ou modèles de langage à grande échelle, sont des systèmes d'IA avancés conçus pour comprendre..." 
+          text="Les LLM, ou modèles de langage à grande échelle, sont des systèmes d'IA avancés conçus pour comprendre générer et interagir..." 
           
-          detailedText="générer et interagir en langage naturel à un niveau humain. Basés sur des architectures de deep learning comme les réseaux de neurones transformer, ces modèles sont entraînés sur d'immenses corpus de texte, leur permettant de réaliser des tâches variées telles que la traduction automatique"
+          detailedText=" en langage naturel à un niveau humain. Basés sur des architectures de deep learning comme les réseaux de neurones transformer, ces modèles sont entraînés sur d'immenses corpus de texte, leur permettant de réaliser des tâches variées telles que la traduction automatique"
         />
       </div>
     </section>
+   
   );
 };
 

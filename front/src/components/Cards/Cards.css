@@ -9,15 +9,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* Ajoutez un arrondi aux cartes si cela correspond au style de votre site */
   border-radius: 8px;
-  border-color: #3a80a0;
+  border-color: #ffb062;
   /* Transition pour les effets au survol */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2px;
 }
 
 .card:hover {
   /* Un léger effet au survol pour donner de la vie à la carte */
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 4px;
 }
 
 .card-img-top {
@@ -49,7 +51,7 @@
 
 .btn-primary {
   background-color: #3a80a0; /* Bleu primaire, mais peut être ajusté pour correspondre à la palette du site */
-  border-color: #3a80a0;
+  border-color: #361e85;
   /* Ajoutez un effet de survol correspondant aux autres boutons du site */
 }
 
@@ -86,4 +88,7 @@
   right: 10px;
   cursor: pointer;
   font-size: 1.5rem;
+}
+.cards{
+  background-color: #fff;
 }

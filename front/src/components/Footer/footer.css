@@ -1,0 +1,16 @@
+.con{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    text-decoration: wavy;
+
+
+    background-color: #002152;
+  
+}
+.copyright{
+    color : #fff;
+    justify-content: center ;
+    text-align: center;
+    padding-top: 94px;
+}

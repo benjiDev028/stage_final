@@ -22,6 +22,7 @@ function Login() {
       const token = await loginUser(email, password);
       if (token) {
         const userId = getUserIdFromToken(token);
+        sessionStorage.setItem('userId', userId);
         alert("ID utilisateur:" + userId);
         window.location.replace('/method');
         // Continuez avec l'ID utilisateur selon vos besoins

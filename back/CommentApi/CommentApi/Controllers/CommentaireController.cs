@@ -22,9 +22,10 @@ namespace CommentApi.Controllers
             _mapper = mapper;
         }
         [HttpPost("post")]
+      
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PostComment(commentPostRequest commentPost)
+        public async Task<IActionResult> PostComment([FromBody]commentPostRequest commentPost)
         {
             var commentMap = _mapper.Map<CommentDto>(commentPost);
 

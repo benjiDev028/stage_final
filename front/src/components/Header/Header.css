@@ -5,9 +5,7 @@
 color :white;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-  }
+
 
 /* Changement de la couleur de fond au survol */
 .nav-link:hover {
