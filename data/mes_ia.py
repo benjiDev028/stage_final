@@ -6,20 +6,22 @@ import os
 import pandas as pd
 from dotenv import load_dotenv
 import openai
+load_dotenv()
 
-async def generate_response():
+def generate_response():
     data = request.json
     user_input = data.get('userInput', '')
 
     try:
-        response =   await  openai.ChatCompletion.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": user_input}]
         )
         return jsonify({'response': response['choices'][0]['message']['content']}), 200
+    except openai.error.OpenAIError as e:
+        return jsonify({'error': str(e)}), 400
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    
 
 async def create_client():
     credentials_path =  await os.getenv('GOOGLE_APPLICATION_CREDENTIALS').strip('"')

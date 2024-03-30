@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./internal.css";
-import { modelApi } from "../../services/chatbotService";
+import "./google.css";
+import { analyzeApi } from "../../services/chatbotService";
 import { postReview } from "../../services/reviewService";
 
-const Internal = () => {
+const Google = () => {
 
   const [Keymot, Setkeymot] = useState("");
   const [NbSentences, SetNbsentences] = useState("");
@@ -12,14 +12,14 @@ const Internal = () => {
   const [nbEtoile, SetNbEtoile] = useState("");
   const userId = sessionStorage.getItem("userId");
   const [errorMessage, setErrorMessage] = useState("");
-  const idIA = "1";
+  const idIA = "2";
 
   const canvasHistogramRef = useRef(null);
   const canvasPieChartRef = useRef(null);
 
   const submithandle = async () => {
     try {
-      const result = await modelApi(Keymot, NbSentences);
+      const result = await analyzeApi(Keymot, NbSentences);
       if (result && result.sentiments) {
         SetAnalysisResult(result);
       } else {
@@ -250,4 +250,4 @@ const Internal = () => {
   );
 };
 
-export default Internal;
+export default Google;

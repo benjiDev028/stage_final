@@ -3,6 +3,7 @@ using IdentityApi.Requests;
 using IdentityBusinessLogic.DTO;
 using IdentityBusinessLogic.Services.Implementations;
 using IdentityBusinessLogic.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
@@ -39,10 +40,10 @@ namespace IdentityApi.Controllers
             return Ok(tokens.accessToken);
         }
 
-        
 
 
 
+      
         [HttpPost("connection")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]

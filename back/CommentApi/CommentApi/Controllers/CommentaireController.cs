@@ -4,6 +4,7 @@ using CommentApi.Responses;
 using CommentBusinessLogic.DTO;
 using CommentBusinessLogic.Services.Interfaces;
 using CommentDataAccess.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,8 +22,8 @@ namespace CommentApi.Controllers
             _commentService = commentService;
             _mapper = mapper;
         }
+        
         [HttpPost("post")]
-      
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostComment([FromBody]commentPostRequest commentPost)
@@ -55,7 +56,7 @@ namespace CommentApi.Controllers
 
             return Ok(commentRes);
         }
-
+      
         [HttpDelete("Id")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -66,7 +67,7 @@ namespace CommentApi.Controllers
             return Ok(commentDeleted);
         }
 
-
+       
         [HttpPut("updateComment/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

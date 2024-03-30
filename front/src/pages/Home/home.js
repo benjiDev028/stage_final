@@ -18,6 +18,7 @@ function Home() {
      <Cards/>
      <App/>
      <Commentaires/>
+     <br/>
      <Footer/>
     </div>
   );
