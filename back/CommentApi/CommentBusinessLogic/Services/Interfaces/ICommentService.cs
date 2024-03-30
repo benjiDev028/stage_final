@@ -16,5 +16,7 @@ namespace CommentBusinessLogic.Services.Interfaces
         Task<CommentDto> GetCommentAsync(Guid id);
         Task<List<CommentDto>> GetAllCommentsAsync();
 
+        Task<List<CommentDto>> GetAllCommentsIaAsync(int IdIa);
+
     }
 }

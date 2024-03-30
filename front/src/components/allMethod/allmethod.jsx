@@ -7,7 +7,7 @@ const AllMethod = () => {
 
   const sentimentMethods = [
     { id: 'internal', name: 'Modèle interne', image: 'internal_model.jpg' },
-    { id: '2', name: 'API Google', image: 'azure_api.jpg' },
+    { id: 'google', name: 'API Google', image: 'azure_api.jpg' },
     { id: 'azure_api', name: 'API Azure', image: 'azure_api.jpg' }
     // Ajoutez d'autres méthodes ici au besoin
   ];

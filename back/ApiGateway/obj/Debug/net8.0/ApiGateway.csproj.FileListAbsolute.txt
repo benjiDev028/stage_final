@@ -37,3 +37,5 @@ E:\repos\2023\formation\stage_final\back\ApiGateway\obj\Debug\net8.0\ApiGateway.
 E:\repos\2023\formation\stage_final\back\ApiGateway\obj\Debug\net8.0\ApiGateway.genruntimeconfig.cache
 E:\repos\2023\formation\stage_final\back\ApiGateway\obj\Debug\net8.0\ref\ApiGateway.dll
 E:\repos\2023\formation\stage_final\back\ApiGateway\bin\Debug\net8.0\ocelot_commentaire.json
+E:\repos\2023\formation\stage_final\back\ApiGateway\bin\Debug\net8.0\ocelot_python.json
+E:\repos\2023\formation\stage_final\back\ApiGateway\obj\Debug\net8.0\ApiGateway.sourcelink.json

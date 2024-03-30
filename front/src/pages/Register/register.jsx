@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
 import {RegisterUser} from '../../services/AuthService';
 import Main from '../../components/Main/Main';
+import Footer from '../../components/Footer/footer';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -32,8 +33,8 @@ function Register() {
     <div>
       <Header />
       <Main/><br/><br/><br/>
-        <div className="container">
-        <div className="screen">
+        <div className="conta">
+        <div className="screenR">
           <div className="screen__content">
             <form className="login" onSubmit={handleSubmit}>
               <div className="login__field">
@@ -105,7 +106,7 @@ function Register() {
             </div>
             <div className="login__create-account">
             
-              <p className='log'> <Link to='/login' className="nav-link" > vous avez un compte ? Sign In</Link></p>
+              <p className='lien'> <Link to='/login' className="nav-link" > vous avez un compte ? Sign In</Link></p>
             
             </div>
           </div>
@@ -116,8 +117,12 @@ function Register() {
             <span className="screen__background__shape screen__background__shape1"></span>
           </div>
         </div>
-      </div>
+      </div><br/><br/>
+      
+      <Footer/>
+      
     </div>
+    
   );
 }
 

@@ -66,5 +66,45 @@ async function getReviews() {
     }
 }
 
+async function getReviewsIa(id) {
+    try {
+        const response = await fetch(`${Api_Url}/review/all/ia/${id}`, {
+            method: 'GET'
+        });
 
-export {postReview,getReviews};
+        if (!response.ok) {
+            throw new Error('Failed to fetch reviews');
+        }
+
+        let data = await response.json();
+
+        // Trier les commentaires par date de publication du plus récent au plus ancien
+        data.sort((a, b) => new Date(b.datepublication) - new Date(a.datepublication));
+        
+        // Récupérer les noms d'utilisateur associés aux IDs d'utilisateur dans chaque commentaire
+        const commentairesWithUsername = await Promise.all(data.map(async (commentaire) => {
+            try {
+                const userResponse = await fetch(`${Api_Url}/users/GetById/${commentaire.idUser}`, {
+                    method: 'GET'
+                });
+
+                if (!userResponse.ok) {
+                    throw new Error('Failed to fetch user');
+                }
+
+                const user = await userResponse.json();
+                return { ...commentaire, username: user.username }; // Ajouter le nom d'utilisateur à chaque commentaire
+            } catch (error) {
+                console.error('Error fetching user:', error);
+                return commentaire; // Si une erreur se produit, retourner le commentaire sans nom d'utilisateur
+            }
+        }));
+
+        return commentairesWithUsername;
+    } catch (error) {
+        console.error('Error fetching reviews:', error);
+        throw error;
+    }
+
+}
+export {postReview,getReviews,getReviewsIa};

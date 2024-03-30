@@ -41,6 +41,18 @@
       "UpstreamPathTemplate": "/review/all",
       "UpstreamHttpMethod": [ "Get" ]
     },
+    {
+      "DownstreamPathTemplate": "/api/Commentaire/allCommentsIa/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5124
+        }
+      ],
+      "UpstreamPathTemplate": "/review/all/ia/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
     //supprimer un commentaire
     {
       "DownstreamPathTemplate": "/api/Commentaire/{id}",

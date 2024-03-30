@@ -284,3 +284,4 @@ E:\repos\2023\formation\stage_final\back\CommentApi\CommentApi\bin\Debug\net8.0\
 E:\repos\2023\formation\stage_final\back\CommentApi\CommentApi\bin\Debug\net8.0\MassTransit.Abstractions.dll
 E:\repos\2023\formation\stage_final\back\CommentApi\CommentApi\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
 E:\repos\2023\formation\stage_final\back\CommentApi\CommentApi\bin\Debug\net8.0\RabbitMQ.Client.dll
+E:\repos\2023\formation\stage_final\back\CommentApi\CommentApi\obj\Debug\net8.0\CommentApi.sourcelink.json

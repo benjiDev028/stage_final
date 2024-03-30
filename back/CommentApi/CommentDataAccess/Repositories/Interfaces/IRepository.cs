@@ -21,6 +21,6 @@ namespace CommentDataAccess.Repositories.Interfaces
         Task<bool> DeleteCommentAsync(Guid commentaire);
         Task<Commentaire> GetCommentAsync(Guid id);
         Task<List<Commentaire>> GetAllCommentsAsync();
-       
+        Task<List<Commentaire>> GetAllCommentIdIaAsync(int IdAi);
     }
 }

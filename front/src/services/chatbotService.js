@@ -1,6 +1,8 @@
 // chatService.js
+const Api_Url = "http://localhost:5086";
+
 const sendMessage = async (userInput) => {
-    const response = await fetch('http://127.0.0.1:5000/chatbot', {
+    const response = await  fetch(`${Api_Url}/api/ai/chatbot`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,11 +21,11 @@ const sendMessage = async (userInput) => {
   export { sendMessage };
 
 
-  const Api_Url = "http://localhost:5000";
+  
 
   async function analyzeApi(mot_cle, nbPhrases) {
     try {
-      const response = await fetch(`${Api_Url}/analyze_google`, {  // Assurez-vous que l'URL correspond à celle de votre back-end
+      const response = await fetch(`${Api_Url}/api/ai/google`, {  // Assurez-vous que l'URL correspond à celle de votre back-end
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -53,7 +55,7 @@ const sendMessage = async (userInput) => {
   
   async function modelApi(mot_cle, nbPhrases) {
     try {
-      const response = await fetch(`${Api_Url}/analyze_sentiment`, {  // Assurez-vous que l'URL correspond à celle de votre back-end
+      const response = await fetch(`${Api_Url}/api/ai/model_internal`, {  // Assurez-vous que l'URL correspond à celle de votre back-end
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

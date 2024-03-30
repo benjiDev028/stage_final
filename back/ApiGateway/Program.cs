@@ -10,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Chemins vers vos fichiers de configuration
 string[] ocelotConfigFiles = new string[] {
     "ocelot_auth.json",
-    "ocelot_commentaire.json"
+    "ocelot_commentaire.json",
+    "ocelot_python.json"
 };
 
 JObject ocelotConfig = new JObject();
@@ -39,6 +40,7 @@ app.MapControllers();
 app.UseCors(builder =>
 {
     builder.WithOrigins("http://localhost:3000")
+   
            .AllowAnyHeader()
            .AllowAnyMethod();
 });

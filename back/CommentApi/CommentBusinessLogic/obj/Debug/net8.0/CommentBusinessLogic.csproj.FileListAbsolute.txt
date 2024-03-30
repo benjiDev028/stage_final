@@ -28,3 +28,4 @@ E:\repos\2023\formation\stage_final\back\CommentApi\CommentBusinessLogic\obj\Deb
 E:\repos\2023\formation\stage_final\back\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\refint\CommentBusinessLogic.dll
 E:\repos\2023\formation\stage_final\back\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.pdb
 E:\repos\2023\formation\stage_final\back\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\ref\CommentBusinessLogic.dll
+E:\repos\2023\formation\stage_final\back\CommentApi\CommentBusinessLogic\obj\Debug\net8.0\CommentBusinessLogic.sourcelink.json

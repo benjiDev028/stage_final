@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 import { getReviews } from '../../services/reviewService'; // Importez la fonction getReviews depuis votre fichier api.js
-
+import { formatDistanceToNow } from 'date-fns';
 function Commentaires() {
     const [commentaires, setCommentaires] = useState([]);
 
     useEffect(() => {
         async function fetchReviews() {
             try {
-                const reviews = await getReviews(); // Utilisez la fonction getReviews pour récupérer les commentaires
+                const reviews = await getReviews(); 
                 setCommentaires(reviews);
             } catch (error) {
                 console.error('Error fetching reviews:', error);
@@ -32,7 +32,11 @@ function Commentaires() {
                             </Card.Body>
                             <ListGroup className="list-group-flush">
                                 <ListGroup.Item>Nombre d'étoiles : {commentaire.nombreEtoile}</ListGroup.Item>
-                                <ListGroup.Item>Date de publication : {new Date(commentaire.datepublication).toLocaleDateString()}</ListGroup.Item>
+                                <ListGroup.Item>
+                                    Date de publication : {
+                                        formatDistanceToNow(new Date(commentaire.datepublication), { addSuffix: true, includeSeconds: true})
+                                    }
+                                    </ListGroup.Item>
                             </ListGroup>
                         </Card>
                     </div>

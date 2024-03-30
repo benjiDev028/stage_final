@@ -1,23 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./google.css";
+import "./composant_google.css";
 import { analyzeApi } from "../../services/chatbotService";
 import { postReview } from "../../services/reviewService";
 
-const Google = () => {
+const Google = ({onCommentAdded}) => {
 
   const [Keymot, Setkeymot] = useState("");
   const [NbSentences, SetNbsentences] = useState("");
   const [AnalysisResult, SetAnalysisResult] = useState(null);
   const [Content, SetContent] = useState("");
-  const [nbEtoile, SetNbEtoile] = useState("");
+  const [nbEtoile, SetNbEtoile] = useState("1");
   const userId = sessionStorage.getItem("userId");
   const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage2, setErrorMessage2] = useState("");
   const idIA = "2";
 
   const canvasHistogramRef = useRef(null);
   const canvasPieChartRef = useRef(null);
 
-  const submithandle = async () => {
+  const submithandle = async (e) => {
+    e.preventDefault();
+    
+    if (Keymot.trim() === "") {
+      setErrorMessage2("Le mot cle ne peut pas être vide !");
+      return;
+    }
+    setErrorMessage2("");
     try {
       const result = await analyzeApi(Keymot, NbSentences);
       if (result && result.sentiments) {
@@ -27,31 +35,34 @@ const Google = () => {
       }
     } catch (error) {
       console.error("Erreur lors de l'analyse :", error.message);
+      setErrorMessage2("Une erreur est survenue :  "+error.message);
+      
     }
   };
 
   const reviewSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage("");
+    if (Content.trim() === "") {
+      setErrorMessage2("Le commentaire ne peut pas être vide !");
+      return;
+    }
 
     try {
-      if (Content.length === 0) {
-        setErrorMessage("le commentaire ne peut pas etre vide ! ");
-      } else {
-        const result = await postReview(idIA, userId, Content, nbEtoile);
-        if (result) setErrorMessage("soumission faite , Merci !");
-        alert(" commentaire Publie , merci");
-        SetContent("");
-        SetNbEtoile("");
-      }
+      await postReview(idIA, userId, Content, nbEtoile); // Assurez-vous que l'ID "1" est celui attendu
+      SetContent("");
+      SetNbEtoile("1");
+      setErrorMessage("");
+   
+      alert("Commentaire publié, merci !");
+      onCommentAdded(); // Rafraîchir la liste des commentaires dans le composant parent
     } catch (error) {
-      console.error("Erreur lors de la soumission de la critique:", error);
-      setErrorMessage(
-        "Une erreur est survenue lors de l'envoi de votre critique."
-      );
+      console.error("Erreur lors de la soumission du commentaire:", error);
+      setErrorMessage("Une erreur est survenue lors de l'envoi de votre commentaire.");
     }
   };
 
+  
+  
   useEffect(() => {
     if (AnalysisResult) {
       drawHistogram(AnalysisResult);
@@ -180,7 +191,7 @@ const Google = () => {
   return (
     <div className="container">
       <div className="card">
-        <h3>Modèle prêt à être testé</h3>
+        <h3>API prêt à être testé</h3>
         <input
           type="text"
           className="form-control"
@@ -203,6 +214,7 @@ const Google = () => {
         <button onClick={submithandle} className="btn custom-btn-primary">
           Analyser
         </button>
+        {errorMessage2 && <p className="error-message">{errorMessage2}</p>}
       </div>
       <div className="card results">
         <h4>Résultats:</h4>
@@ -225,19 +237,19 @@ const Google = () => {
           onChange={(e) => SetNbEtoile(e.target.value)}
           required
         >
-          <option type="number" selected value="1">
+          <option  defaultValue={1} >
             1
           </option>
-          <option type="number" value="2">
+          <option type="number" value={2}>
             2
           </option>
-          <option type="number" value="3">
+          <option type="number" value={3}>
             3
           </option>
-          <option type="number" value="4">
+          <option type="number" value={4}>
             4
           </option>
-          <option type="number" value="5">
+          <option type="number" value={5}>
             5
           </option>
         </select>

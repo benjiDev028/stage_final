@@ -8,7 +8,7 @@
 }
 
 
-.container {
+.cont {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -19,7 +19,7 @@
 .screen {		
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	
-	height: 100px;
+	height: 630px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }

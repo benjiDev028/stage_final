@@ -33,6 +33,14 @@ namespace CommentDataAccess.Repositories.Implementations
             return true;
         }
 
+        public  async Task<List<Commentaire>> GetAllCommentIdIaAsync(int IdAi)
+        {
+            var commentaires = await _commentContext.Commentaires
+                                              .Where(commentaire => commentaire.IdAI == IdAi)
+                                              .ToListAsync();
+            return commentaires;
+        }
+
         public async Task<List<Commentaire>> GetAllCommentsAsync()
         {
             return await _commentContext.Commentaires.ToListAsync();

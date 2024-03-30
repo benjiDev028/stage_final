@@ -22,6 +22,7 @@ function Login() {
       const token = await loginUser(email, password);
       if (token) {
         const userId = getUserIdFromToken(token);
+        // localStorage.setItem('token',userId);
         sessionStorage.setItem('userId', userId);
         alert("ID utilisateur:" + userId);
         window.location.replace('/method');
@@ -39,7 +40,7 @@ function Login() {
       <Header />
       <Main/><br/><br/><br/><br/><br/>
 
-      <div className="container">
+      <div className="cont">
         <div className="screen">
           <div className="screen__content">
             <form className="login" onSubmit={handleSubmit}>

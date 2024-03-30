@@ -8,7 +8,8 @@ function getUserIdFromToken(token) {
     
     try {
         const decodedToken = jwtDecode(token); // Utilisez jwtDecode ici
-        const userId = decodedToken.sub; // 'sub' est généralement utilisé pour stocker l'identifiant de l'utilisateur dans un token JWT
+        const userId = decodedToken.sub; 
+        // 'sub' est généralement utilisé pour stocker l'identifiant de l'utilisateur dans un token JWT
         return userId;
     } catch (error) {
         console.error("Erreur lors du décodage du token :", error);
@@ -51,6 +52,8 @@ async function loginUser(email, password) {
 
         // Stockez le token dans localStorage ou sessionStorage
         localStorage.setItem('token',token);
+        
+       
         console.log(token) // Vous pouvez ajuster selon votre choix de stockage
         return token;
     } catch (error) {

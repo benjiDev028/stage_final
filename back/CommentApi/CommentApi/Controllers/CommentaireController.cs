@@ -80,5 +80,16 @@ namespace CommentApi.Controllers
             return  Ok(await _commentService.UpdateCommentAsync(updatedComment));
 
         }
+        [HttpGet("allCommentsIa/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult>  GetAllCommentIa ( int id)
+        {
+            var comments = await _commentService.GetAllCommentsIaAsync(id);
+            var commentRes = _mapper.Map<List<commentResponse>>(comments);
+
+            return Ok(commentRes);
+        }
     }
 }

@@ -65,6 +65,20 @@ namespace CommentBusinessLogic.Services.Implementations
 
         }
 
+        public async Task<List<CommentDto>> GetAllCommentsIaAsync(int IdIa)
+        {
+            try
+            {
+                var commentaires = await _repository.GetAllCommentIdIaAsync(IdIa);
+                return _mapper.Map<List<CommentDto>>(commentaires);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
+        }
+
         public async Task<CommentDto> GetCommentAsync(Guid id)
         {
             try

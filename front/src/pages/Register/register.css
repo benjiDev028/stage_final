@@ -16,17 +16,18 @@ body {
 	text-align: center;
 	float: right;
 }
-.container {
+.conta {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+	
 }
 
-.screen {		
+.screenR {		
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	
-	height: 780px;
+	height: 980px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
